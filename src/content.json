@@ -1,0 +1,101 @@
+{
+  "site": {
+    "name": "Charles River Chorale",
+    "tagline": "Building community through the joy of choral music since 1968"
+  },
+  "hero": {
+    "slides": [
+      {
+        "image": "/images/carousel/slide1.jpeg",
+        "alt": "Charles River Chorale Performance"
+      },
+      {
+        "image": "/images/carousel/slide2.jpeg",
+        "alt": "Choir Rehearsal"
+      }
+    ]
+  },
+  "mission": {
+    "title": "Our Mission",
+    "description": "The mission of the Charles River Chorale is to bring a variety of engaging, enriching, and enjoyable choral music to the regional community. This welcoming chorus, under the professional direction of Ashley Nelson-Oneschuk, learns and performs a variety of repertoire and meets once a week for two hours, preparing two concerts per year. Although it remains centered in Millis, the Chorale has attracted members and audience from throughout the Charles River watershed area. Medway and Franklin are both well represented, and members travel from as far as Boston and Attleboro to sing with the organization.",
+    "quote": "Voices joined in song build community stronger than stone.",
+    "image": "/images/mission.png"
+  },
+  "nextConcert": {
+    "date": {
+      "day": "7",
+      "month": "December",
+      "year": "2025",
+      "dayOfWeek": "Sunday Evening"
+    },
+    "title": "Lift your heart and sing",
+    "description": "Enjoy a winter evening of spiritual and classical favorites, featuring beloved classics and contemporary arrangements.",
+    "venue": "Medway High School",
+    "time": "7:30 PM",
+    "tag": "chorale",
+    "ticketLink": "#"
+  },
+  "rehearsals": {
+    "title": "Join Our Rehearsals",
+    "subtitle": "New members are always welcome",
+    "schedule": {
+      "day": "Tuesdays",
+      "time": "7:30 - 9:30 PM"
+    },
+    "location": {
+      "venue": "Church of Christ, Millis",
+      "room": "Music Room"
+    },
+    "note": "No audition required"
+  },
+  "advertisers": {
+    "title": "Our Supporters",
+    "subtitle": "Thank you to our generous advertisers",
+    "logos": [
+      {
+        "name": "SPONSOR",
+        "image": "/images/logos/sponsor.png",
+        "url": "#"
+      },
+      {
+        "name": "SPONSOR",
+        "image": "/images/logos/sponsor.png",
+        "url": "#"
+      },
+      {
+        "name": "SPONSOR",
+        "image": "/images/logos/sponsor.png",
+        "url": "#"
+      },
+      {
+        "name": "SPONSOR",
+        "image": "/images/logos/sponsor.png",
+        "url": "#"
+      }
+    ]
+  },
+  "footer": {
+    "quickLinks": [
+      {
+        "text": "About Us",
+        "url": "#"
+      },
+      {
+        "text": "Concerts",
+        "url": "#"
+      },
+      {
+        "text": "Join Us",
+        "url": "#"
+      },
+      {
+        "text": "Contact",
+        "url": "#"
+      }
+    ],
+    "social": {
+      "facebook": "#",
+      "twitter": "#"
+    }
+  }
+}

@@ -1,0 +1,155 @@
+backend:
+  name: git-gateway
+  branch: main # Your default branch
+
+# Uncomment for local development
+# local_backend: true
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "announcements"
+    label: "Announcements"
+    folder: "src/content/announcements"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Priority",
+          name: "priority",
+          widget: "select",
+          options: ["low", "normal", "high"],
+          default: "normal",
+        }
+      - {
+          label: "Published",
+          name: "published",
+          widget: "boolean",
+          default: true,
+        }
+
+  - name: "events"
+    label: "Events & Calendar"
+    folder: "src/content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Event Title", name: "title", widget: "string" }
+      - { label: "Event Date", name: "eventDate", widget: "datetime" }
+      - {
+          label: "Event Time",
+          name: "eventTime",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - {
+          label: "Event Type",
+          name: "eventType",
+          widget: "select",
+          options: ["rehearsal", "performance", "meeting", "other"],
+          default: "rehearsal",
+        }
+      - {
+          label: "Published",
+          name: "published",
+          widget: "boolean",
+          default: true,
+        }
+
+  - name: "sheet-music"
+    label: "Sheet Music"
+    folder: "src/content/sheet-music"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Composer", name: "composer", widget: "string" }
+      - {
+          label: "Arranger",
+          name: "arranger",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Concert/Season", name: "concert", widget: "string" }
+      - {
+          label: "Voice Part",
+          name: "voicePart",
+          widget: "select",
+          options: ["Soprano", "Alto", "Tenor", "Bass", "All Parts"],
+          default: "All Parts",
+        }
+      - { label: "PDF File", name: "pdfFile", widget: "file", required: false }
+      - {
+          label: "Practice Track",
+          name: "practiceTrack",
+          widget: "file",
+          required: false,
+          media_library: { config: { multiple: false } },
+        }
+      - { label: "Notes", name: "notes", widget: "text", required: false }
+      - {
+          label: "Published",
+          name: "published",
+          widget: "boolean",
+          default: true,
+        }
+
+  - name: "resources"
+    label: "Resources"
+    folder: "src/content/resources"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["Handbook", "Guidelines", "Forms", "Other"],
+          default: "Other",
+        }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "File", name: "file", widget: "file", required: false }
+      - { label: "Link", name: "link", widget: "string", required: false }
+      - {
+          label: "Published",
+          name: "published",
+          widget: "boolean",
+          default: true,
+        }
+
+  - name: "directory"
+    label: "Member Directory"
+    folder: "src/content/directory"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Phone", name: "phone", widget: "string", required: false }
+      - {
+          label: "Voice Part",
+          name: "voicePart",
+          widget: "select",
+          options: ["Soprano", "Alto", "Tenor", "Bass"],
+          required: false,
+        }
+      - {
+          label: "Join Date",
+          name: "joinDate",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Role", name: "role", widget: "string", required: false }
+      - {
+          label: "Published",
+          name: "published",
+          widget: "boolean",
+          default: true,
+        }

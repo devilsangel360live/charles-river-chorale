@@ -1,0 +1,18 @@
+---
+import { SignUp } from '@clerk/astro/components';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Sign Up - Charles River Chorale</title>
+  </head>
+  <body class="bg-slate-50">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4">
+      <SignUp signInUrl="/sign-in" afterSignUpUrl="/members" />
+    </div>
+  </body>
+</html>

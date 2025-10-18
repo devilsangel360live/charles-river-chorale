@@ -1,0 +1,295 @@
+---
+import '../styles/global.css';
+import content from '../content.json';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/astro/components';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Metamorphous&display=swap" rel="stylesheet">
+    <title>Member Area - Charles River Chorale</title>
+  </head>
+  <body class="font-sans text-slate-800 bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-emerald-900 shadow-lg z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center gap-4">
+            <img src="/images/white_logo.png" alt="Charles River Chorale Logo" class="w-14 h-14" />
+            <div>
+              <h1 class="text-2xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">{content.site.name}</h1>
+            </div>
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a href="/#mission" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Mission</a>
+            <a href="/#concerts" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Concerts</a>
+            <a href="/#rehearsals" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Rehearsals</a>
+            <a href="/leadership" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Leadership</a>
+            <a href="/members" class="text-white transition uppercase text-sm font-medium tracking-wide border-b-2 border-teal-400">Members</a>
+            <a href="/#advertisers" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Advertisers</a>
+            <button class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full transition uppercase text-sm font-medium tracking-wide">
+              Donate
+            </button>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+            <SignedOut>
+              <a href="/sign-in" class="bg-white text-emerald-900 px-6 py-2 rounded-full transition hover:bg-emerald-50 uppercase text-sm font-medium tracking-wide">
+                Login
+              </a>
+            </SignedOut>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button class="md:hidden p-2 text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="relative mt-20 bg-gradient-to-br from-emerald-900 to-emerald-800 text-white py-24">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="font-serif text-6xl mb-6">Member Area</h1>
+        <p class="text-xl text-emerald-100 max-w-2xl mx-auto">
+          Exclusive resources and information for Charles River Chorale members
+        </p>
+      </div>
+    </section>
+
+    <!-- Signed Out: Coming Soon Section -->
+    <SignedOut>
+    <section class="py-32 bg-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="mb-8">
+          <svg class="w-32 h-32 mx-auto text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+        </div>
+
+        <h2 class="font-serif text-5xl text-slate-900 mb-6">Coming Soon</h2>
+        <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+          We're building a dedicated member portal where you'll be able to access:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl text-slate-900 mb-2">Sheet Music</h3>
+            <p class="text-slate-600 text-sm">Download and access all current repertoire</p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl text-slate-900 mb-2">Event Calendar</h3>
+            <p class="text-slate-600 text-sm">Stay updated on all rehearsals and performances</p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl text-slate-900 mb-2">Announcements</h3>
+            <p class="text-slate-600 text-sm">Important updates and member communications</p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl text-slate-900 mb-2">Member Directory</h3>
+            <p class="text-slate-600 text-sm">Connect with fellow chorale members</p>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-8 max-w-2xl mx-auto">
+          <p class="text-slate-700 mb-4">
+            <span class="font-semibold">Current Members:</span> Please check your email for rehearsal schedules and concert information. If you have questions, contact us at:
+          </p>
+          <a href="mailto:info@charlesriverchorale.org" class="text-teal-600 font-medium hover:text-teal-700 transition">
+            info@charlesriverchorale.org
+          </a>
+        </div>
+      </div>
+    </section>
+    </SignedOut>
+
+    <!-- Signed In: Member Dashboard -->
+    <SignedIn>
+    <section class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-12 text-center">
+          <h2 class="font-serif text-4xl text-slate-900 mb-4">Welcome Back!</h2>
+          <p class="text-xl text-slate-600">Access your member resources below</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Sheet Music -->
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
+              <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-slate-900 mb-3 text-center">Sheet Music</h3>
+            <p class="text-slate-600 text-center mb-4">Download current repertoire and practice tracks</p>
+            <div class="text-center">
+              <span class="text-teal-600 font-medium">Coming Soon →</span>
+            </div>
+          </a>
+
+          <!-- Event Calendar -->
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
+              <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-slate-900 mb-3 text-center">Calendar</h3>
+            <p class="text-slate-600 text-center mb-4">View rehearsals and upcoming performances</p>
+            <div class="text-center">
+              <span class="text-teal-600 font-medium">Coming Soon →</span>
+            </div>
+          </a>
+
+          <!-- Announcements -->
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
+              <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-slate-900 mb-3 text-center">Announcements</h3>
+            <p class="text-slate-600 text-center mb-4">Stay updated with important news</p>
+            <div class="text-center">
+              <span class="text-teal-600 font-medium">Coming Soon →</span>
+            </div>
+          </a>
+
+          <!-- Member Directory -->
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
+              <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-slate-900 mb-3 text-center">Directory</h3>
+            <p class="text-slate-600 text-center mb-4">Connect with fellow members</p>
+            <div class="text-center">
+              <span class="text-teal-600 font-medium">Coming Soon →</span>
+            </div>
+          </a>
+
+          <!-- My Profile -->
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
+              <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-slate-900 mb-3 text-center">My Profile</h3>
+            <p class="text-slate-600 text-center mb-4">Update your member information</p>
+            <div class="text-center">
+              <span class="text-teal-600 font-medium">Coming Soon →</span>
+            </div>
+          </a>
+
+          <!-- Resources -->
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
+              <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-slate-900 mb-3 text-center">Resources</h3>
+            <p class="text-slate-600 text-center mb-4">Member handbook and guidelines</p>
+            <div class="text-center">
+              <span class="text-teal-600 font-medium">Coming Soon →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="mt-12 bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-8 text-center">
+          <p class="text-slate-700 mb-2">
+            <span class="font-semibold">Need help?</span> Contact us for any questions or assistance.
+          </p>
+          <a href="mailto:info@charlesriverchorale.org" class="text-teal-600 font-medium hover:text-teal-700 transition">
+            info@charlesriverchorale.org
+          </a>
+        </div>
+      </div>
+    </section>
+    </SignedIn>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3 mb-4">
+              <img src="/images/white_logo.png" alt="Charles River Chorale Logo" class="w-12 h-12" />
+              <h3 class="text-2xl" style="font-family: 'Metamorphous', serif;">{content.site.name}</h3>
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              {content.site.tagline}
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-slate-400">
+              {content.footer.quickLinks.map((link) => (
+                <li><a href={link.url} class="hover:text-white transition">{link.text}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Connect</h4>
+            <div class="flex gap-4">
+              <a href={content.footer.social.facebook} class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-slate-700 transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href={content.footer.social.twitter} class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-slate-700 transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-800 pt-8 text-center text-slate-400 text-sm">
+          <p>&copy; 2024 Charles River Chorale. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
