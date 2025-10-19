@@ -2,6 +2,20 @@
 import '../styles/global.css';
 import content from '../content.json';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/astro/components';
+import { getCollection } from 'astro:content';
+
+// Fetch published announcements and events, sorted by date
+const allAnnouncements = await getCollection('announcements', ({ data }) => {
+  return data.published === true;
+});
+const announcements = allAnnouncements.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const allEvents = await getCollection('events', ({ data }) => {
+  return data.published === true;
+});
+const upcomingEvents = allEvents
+  .filter(event => event.data.eventDate >= new Date())
+  .sort((a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf());
 ---
 
 <!doctype html>
@@ -231,6 +245,90 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/astro/comp
             </div>
           </a>
         </div>
+
+        <!-- Announcements Section -->
+        {announcements.length > 0 && (
+          <div class="mt-16">
+            <div class="flex items-center gap-3 mb-8">
+              <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+              </svg>
+              <h2 class="font-serif text-3xl text-slate-900">Recent Announcements</h2>
+            </div>
+            <div class="space-y-4">
+              {announcements.slice(0, 5).map(async (announcement) => {
+                const { Content } = await announcement.render();
+                const priorityColors = {
+                  high: 'border-red-200 bg-red-50',
+                  normal: 'border-slate-200 bg-slate-50',
+                  low: 'border-slate-200 bg-slate-50'
+                };
+                return (
+                  <div class={`border-2 rounded-xl p-6 ${priorityColors[announcement.data.priority]}`}>
+                    <div class="flex items-start justify-between mb-3">
+                      <h3 class="font-serif text-xl text-slate-900">{announcement.data.title}</h3>
+                      <span class="text-sm text-slate-500">
+                        {announcement.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                      </span>
+                    </div>
+                    <div class="prose prose-slate max-w-none">
+                      <Content />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        <!-- Upcoming Events Section -->
+        {upcomingEvents.length > 0 && (
+          <div class="mt-16">
+            <div class="flex items-center gap-3 mb-8">
+              <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              <h2 class="font-serif text-3xl text-slate-900">Upcoming Events</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              {upcomingEvents.slice(0, 6).map((event) => {
+                const eventTypeColors = {
+                  rehearsal: 'bg-blue-50 border-blue-200',
+                  performance: 'bg-purple-50 border-purple-200',
+                  meeting: 'bg-green-50 border-green-200',
+                  other: 'bg-slate-50 border-slate-200'
+                };
+                const eventTypeIcons = {
+                  rehearsal: '🎵',
+                  performance: '🎭',
+                  meeting: '📋',
+                  other: '📅'
+                };
+                return (
+                  <div class={`border-2 rounded-xl p-6 ${eventTypeColors[event.data.eventType]}`}>
+                    <div class="flex items-start gap-3 mb-3">
+                      <span class="text-2xl">{eventTypeIcons[event.data.eventType]}</span>
+                      <div class="flex-1">
+                        <h3 class="font-serif text-xl text-slate-900 mb-1">{event.data.title}</h3>
+                        <p class="text-sm text-slate-600">
+                          {event.data.eventDate.toLocaleDateString('en-US', {
+                            weekday: 'long',
+                            month: 'long',
+                            day: 'numeric',
+                            year: 'numeric'
+                          })}
+                          {event.data.eventTime && ` • ${event.data.eventTime}`}
+                        </p>
+                        <p class="text-sm text-slate-600 mt-1">📍 {event.data.location}</p>
+                      </div>
+                    </div>
+                    <p class="text-slate-700">{event.data.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <!-- Contact Box -->
         <div class="mt-12 bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-8 text-center">
