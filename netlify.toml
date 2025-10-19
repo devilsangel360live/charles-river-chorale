@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Disable secrets scanning for public Clerk keys
+# PUBLIC_CLERK_PUBLISHABLE_KEY is meant to be exposed in client-side code
+[build.processing.secrets]
+  enabled = true
+  omit_keys = ["PUBLIC_CLERK_PUBLISHABLE_KEY"]
