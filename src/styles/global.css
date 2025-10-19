@@ -3,4 +3,9 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+
+  /* Custom CRC Green */
+  --color-crc-green: #1a401b;
+  --color-crc-green-light: #2a5a2b;
+  --color-crc-green-lighter: #d4e8d4;
 }

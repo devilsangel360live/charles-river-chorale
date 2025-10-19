@@ -32,23 +32,23 @@ const upcomingEvents = allEvents
   <body class="font-sans text-slate-800 bg-white">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-emerald-900 shadow-lg z-50">
+    <nav class="fixed top-0 w-full bg-[#1a401b] shadow-lg z-50">
       <div class="max-w-7xl mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <a href="/" class="flex items-center gap-4">
-            <img src="/images/white_logo.png" alt="Charles River Chorale Logo" class="w-14 h-14" />
+            <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="w-14 h-14" />
             <div>
               <h1 class="text-2xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">{content.site.name}</h1>
             </div>
           </a>
 
           <div class="hidden md:flex items-center gap-8">
-            <a href="/#mission" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Mission</a>
-            <a href="/#concerts" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Concerts</a>
-            <a href="/#rehearsals" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Rehearsals</a>
-            <a href="/leadership" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Leadership</a>
+            <a href="/#mission" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Mission</a>
+            <a href="/#concerts" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Concerts</a>
+            <a href="/#rehearsals" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Rehearsals</a>
+            <a href="/leadership" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Leadership</a>
             <a href="/members" class="text-white transition uppercase text-sm font-medium tracking-wide border-b-2 border-teal-400">Members</a>
-            <a href="/#advertisers" class="text-emerald-100 hover:text-white transition uppercase text-sm font-medium tracking-wide">Advertisers</a>
+            <a href="/#advertisers" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Advertisers</a>
             <button class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full transition uppercase text-sm font-medium tracking-wide">
               Donate
             </button>
@@ -56,7 +56,7 @@ const upcomingEvents = allEvents
               <UserButton />
             </SignedIn>
             <SignedOut>
-              <a href="/sign-in" class="bg-white text-emerald-900 px-6 py-2 rounded-full transition hover:bg-emerald-50 uppercase text-sm font-medium tracking-wide">
+              <a href="/sign-in" class="bg-white text-[#1a401b] px-6 py-2 rounded-full transition hover:bg-[#d4e8d4] uppercase text-sm font-medium tracking-wide">
                 Login
               </a>
             </SignedOut>
@@ -73,10 +73,10 @@ const upcomingEvents = allEvents
     </nav>
 
     <!-- Hero Header -->
-    <section class="relative mt-20 bg-gradient-to-br from-emerald-900 to-emerald-800 text-white py-24">
+    <section class="relative mt-20 bg-gradient-to-br from-[#1a401b] to-[#2a5a2b] text-white py-24">
       <div class="max-w-6xl mx-auto px-6 text-center">
         <h1 class="font-serif text-6xl mb-6">Member Area</h1>
-        <p class="text-xl text-emerald-100 max-w-2xl mx-auto">
+        <p class="text-xl text-white/80 max-w-2xl mx-auto">
           Exclusive resources and information for Charles River Chorale members
         </p>
       </div>
@@ -139,7 +139,7 @@ const upcomingEvents = allEvents
           </div>
         </div>
 
-        <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-8 max-w-2xl mx-auto">
+        <div class="bg-[#d4e8d4] border-2 border-[#2a5a2b]/30 rounded-2xl p-8 max-w-2xl mx-auto">
           <p class="text-slate-700 mb-4">
             <span class="font-semibold">Current Members:</span> Please check your email for rehearsal schedules and concert information. If you have questions, contact us at:
           </p>
@@ -162,7 +162,7 @@ const upcomingEvents = allEvents
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Sheet Music -->
-          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-[#d4e8d4]">
             <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
               <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -176,7 +176,7 @@ const upcomingEvents = allEvents
           </a>
 
           <!-- Event Calendar -->
-          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-[#d4e8d4]">
             <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
               <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -190,7 +190,7 @@ const upcomingEvents = allEvents
           </a>
 
           <!-- Announcements -->
-          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-[#d4e8d4]">
             <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
               <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
@@ -204,7 +204,7 @@ const upcomingEvents = allEvents
           </a>
 
           <!-- Member Directory -->
-          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-[#d4e8d4]">
             <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
               <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -218,7 +218,7 @@ const upcomingEvents = allEvents
           </a>
 
           <!-- My Profile -->
-          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-[#d4e8d4]">
             <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
               <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -232,7 +232,7 @@ const upcomingEvents = allEvents
           </a>
 
           <!-- Resources -->
-          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-emerald-50">
+          <a href="#" class="group bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition hover:bg-[#d4e8d4]">
             <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition">
               <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -331,7 +331,7 @@ const upcomingEvents = allEvents
         )}
 
         <!-- Contact Box -->
-        <div class="mt-12 bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-8 text-center">
+        <div class="mt-12 bg-[#d4e8d4] border-2 border-[#2a5a2b]/30 rounded-2xl p-8 text-center">
           <p class="text-slate-700 mb-2">
             <span class="font-semibold">Need help?</span> Contact us for any questions or assistance.
           </p>
@@ -349,7 +349,7 @@ const upcomingEvents = allEvents
         <div class="grid md:grid-cols-4 gap-12 mb-12">
           <div class="md:col-span-2">
             <div class="flex items-center gap-3 mb-4">
-              <img src="/images/white_logo.png" alt="Charles River Chorale Logo" class="w-12 h-12" />
+              <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="w-12 h-12" />
               <h3 class="text-2xl" style="font-family: 'Metamorphous', serif;">{content.site.name}</h3>
             </div>
             <p class="text-slate-400 leading-relaxed">

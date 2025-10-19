@@ -12,6 +12,10 @@
       {
         "image": "/images/carousel/slide2.jpeg",
         "alt": "Choir Rehearsal"
+      },
+      {
+        "image": "/images/carousel/slide3.jpeg",
+        "alt": "Charles River Chorale"
       }
     ]
   },
