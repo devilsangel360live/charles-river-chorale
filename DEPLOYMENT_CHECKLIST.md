@@ -39,11 +39,11 @@ After enabling Identity:
 
    **Variable 1:**
    - Key: `PUBLIC_CLERK_PUBLISHABLE_KEY`
-   - Value: `pk_test_YWxsb3dpbmctc3BpZGVyLTQ5LmNsZXJrLmFjY291bnRzLmRldiQ`
+   - Value: `[Get from .env file or Clerk dashboard]`
 
    **Variable 2:**
    - Key: `CLERK_SECRET_KEY`
-   - Value: `sk_test_FDXdZ5Qy2lOl5qv6WLrhsJAgmk7lQEYaCOPu6Uy9Ro`
+   - Value: `[Get from .env file or Clerk dashboard]`
 
 4. Click **"Save"**
 5. Trigger a new deploy (Settings → Build & deploy → Trigger deploy → Deploy site)
