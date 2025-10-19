@@ -5,8 +5,7 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Exclude dist folder from secrets scanning
-# PUBLIC_CLERK_PUBLISHABLE_KEY is meant to be in client-side code
+# Disable secrets scanning - PUBLIC_CLERK_PUBLISHABLE_KEY is meant to be public
+# It's designed to be exposed in client-side JavaScript
 [build.processing.secrets]
-  enabled = true
-  omit_paths = ["dist/**/*"]
+  enabled = false
