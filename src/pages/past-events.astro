@@ -1,0 +1,130 @@
+---
+import '../styles/global.css';
+import content from '../content.json';
+
+const events = [
+  { title: 'Dream It', season: 'Spring 2025', poster: '/images/posters/2025-spring-poster.png' },
+  { title: 'Let It Snow', season: 'Winter 2024', poster: '/images/posters/2024-winter-poster.png', program: '/documents/Let%20It%20Snow%202024%20Program.pdf' },
+  { title: 'Spring Concert', season: 'Spring 2024', poster: '/images/posters/2024-sping-poster.png' },
+  { title: 'Winter Concert', season: 'Winter 2023', poster: '/images/posters/2023-winter-poster.png' },
+  { title: 'Spring Concert', season: 'Spring 2023', poster: '/images/posters/2023-spring-poster.png' },
+  { title: 'Winter Concert', season: 'Winter 2022', poster: '/images/posters/2022-winter-poster.png' },
+  { title: 'Spring Concert', season: 'Spring 2022', poster: '/images/posters/2022-spring-poster.png' },
+  { title: 'Winter Concert', season: 'Winter 2021', poster: '/images/posters/2021_winter_poster.png' },
+  { title: 'Spring Concert', season: 'Spring 2021', poster: '/images/posters/2021_spring_promo.png' },
+  { title: 'Winter Concert', season: 'Winter 2019', poster: '/images/posters/2019_winter_poster.png', program: '/documents/2019_winter_program.pdf' },
+  { title: 'Spring Concert', season: 'Spring 2019', poster: '/images/posters/2019_spring_poster.jpg', program: '/documents/2019_spring_program.pdf' },
+  { title: 'Winter Concert', season: 'Winter 2018', poster: '/images/posters/2018_winter_poster.jpg', program: '/documents/2018_winter_program.pdf' },
+  { title: 'Winter Concert', season: 'Winter 2017', poster: '/images/posters/2017_winter_poster.jpg', program: '/documents/2017_winter_program.pdf' },
+  { title: 'Spring Concert', season: 'Spring 2017', poster: '/images/posters/2017_spring_poster.jpg', program: '/documents/2017_spring_program.pdf' },
+  { title: 'Winter Concert', season: 'Winter 2016', poster: '/images/posters/2016_winter_poster.jpg', program: '/documents/2016_winter_program.pdf' },
+  { title: 'Spring Concert', season: 'Spring 2016', poster: '/images/posters/2016_spring_poster.jpg', program: '/documents/2016_spring_program.pdf' },
+  { title: 'Winter Concert', season: 'Winter 2015', poster: '/images/posters/2015_winter_poster.jpg', program: '/documents/2015_winter_program.pdf' },
+  { title: 'Spring Concert', season: 'Spring 2015', poster: '/images/posters/2015_spring_poster.jpg', program: '/documents/2015_spring_program.pdf' },
+  { title: 'Winter Concert', season: 'Winter 2014', poster: '/images/posters/2014_winter_poster.jpg', program: '/documents/2014_winter_program.pdf' },
+  { title: 'Winter Concert', season: 'Winter 2013', poster: '/images/posters/2013_winter_poster.jpg', program: '/documents/2013_winter_program.pdf' },
+  { title: 'Spring Concert', season: 'Spring 2013', poster: '/images/posters/2013_spring_poster.jpg', program: '/documents/2013_spring_program.pdf' },
+  { title: 'Winter Concert', season: 'Winter 2012', poster: '/images/posters/2012_winter_poster.jpg', program: '/documents/2012_winter_program.pdf' },
+  { title: 'Spring Concert', season: 'Spring 2012', poster: '/images/posters/2012_spring_poster.jpg', program: '/documents/2012_spring_program.pdf' },
+  { title: 'Winter Concert', season: 'Winter 2011', poster: '/images/posters/2011_winter_poster.jpg', program: '/documents/2011_winter_program.pdf' },
+  { title: 'Spring Concert', season: 'Spring 2011', poster: '/images/posters/2011_spring_poster.jpg' },
+  { title: 'Winter Concert', season: 'Winter 2010', poster: '/images/posters/2010_winter_poster.jpg' },
+  { title: 'Winter Concert', season: 'Winter 2008', poster: '/images/posters/2008_winter_poster.jpg' },
+  { title: 'Winter Concert', season: 'Winter 2007', poster: '/images/posters/2007_winter_poster.jpg' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Metamorphous&display=swap" rel="stylesheet">
+    <title>Past Events - Charles River Chorale</title>
+  </head>
+  <body class="font-sans text-slate-800 bg-white">
+    <nav class="fixed top-0 w-full bg-[#1a401b] shadow-lg z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center gap-4 shrink-0" aria-label="Charles River Chorale home">
+            <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="h-16" />
+            <div class="leading-tight">
+              <div class="text-lg font-semibold text-white" style="font-family: 'Metamorphous', serif;">Charles River</div>
+              <div class="text-3xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">Chorale</div>
+            </div>
+          </a>
+          <div class="hidden md:flex items-center gap-5" data-desktop-nav>
+            <a href="/" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Home</a>
+            <a href="/childrens-choir" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Children's Choir</a>
+            <a href="/leadership" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Leadership</a>
+            <a href="/past-events" class="text-white transition uppercase text-sm font-medium tracking-wide border-b-2 border-teal-400">Past Events</a>
+            <a href="/media" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Media</a>
+            <a href="/members" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Members</a>
+            <a href="/#advertisers" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Advertisers</a>
+          </div>
+          <button class="md:hidden p-2 text-white" type="button" aria-label="Open navigation" aria-expanded="false" data-mobile-menu-button>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="hidden md:hidden pt-4 text-white/90 uppercase text-sm font-medium tracking-wide" data-mobile-menu></div>
+      </div>
+    </nav>
+
+    <section class="relative mt-20 bg-gradient-to-br from-[#1a401b] to-[#2a5a2b] text-white py-24">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="font-serif text-6xl mb-6">Past Events</h1>
+        <p class="text-xl text-white/80 max-w-2xl mx-auto">Browse concert posters from the Charles River Chorale archive. Cards with program PDFs open the full program.</p>
+      </div>
+    </section>
+
+    <main class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+          {events.map((event) => {
+            const card = (
+              <article class="group bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition h-full flex flex-col">
+                <div class="bg-slate-100 aspect-[3/4] overflow-hidden p-2">
+                  <img src={event.poster} alt={`${event.season} poster`} class="w-full h-full object-contain group-hover:scale-[1.02] transition duration-300" />
+                </div>
+                <div class="p-4 flex-1 flex flex-col">
+                  <p class="text-xs uppercase tracking-[0.14em] text-teal-700 font-semibold mb-2">{event.season}</p>
+                  <h2 class="font-serif text-xl text-slate-900 mb-3">{event.title}</h2>
+                  <p class="text-sm text-slate-500 mt-auto">{event.program ? 'View program PDF' : 'Poster archive'}</p>
+                </div>
+              </article>
+            );
+            return event.program ? <a href={event.program} target="_blank" rel="noopener noreferrer">{card}</a> : card;
+          })}
+        </div>
+      </div>
+    </main>
+    <script>
+      const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+      const mobileMenu = document.querySelector('[data-mobile-menu]');
+      const desktopNav = document.querySelector('[data-desktop-nav]');
+
+      if (mobileMenuButton && mobileMenu && desktopNav) {
+        mobileMenu.innerHTML = desktopNav.innerHTML;
+        mobileMenuButton.addEventListener('click', () => {
+          const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+          mobileMenu.classList.toggle('hidden', isOpen);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.classList.add('block', 'py-3', 'border-t', 'border-white/10');
+          link.addEventListener('click', () => {
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    </script>
+
+  </body>
+</html>

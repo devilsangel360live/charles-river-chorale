@@ -23,7 +23,7 @@ const upcomingEvents = allEvents
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Metamorphous&display=swap" rel="stylesheet">
@@ -35,40 +35,32 @@ const upcomingEvents = allEvents
     <nav class="fixed top-0 w-full bg-[#1a401b] shadow-lg z-50">
       <div class="max-w-7xl mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <a href="/" class="flex items-center gap-4">
-            <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="h-14" />
-            <div>
-              <h1 class="text-2xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">{content.site.name}</h1>
+          <a href="/" class="flex items-center gap-4 shrink-0" aria-label="Charles River Chorale home">
+            <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="h-16" />
+            <div class="leading-tight">
+              <div class="text-lg font-semibold text-white" style="font-family: 'Metamorphous', serif;">Charles River</div>
+              <div class="text-3xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">Chorale</div>
             </div>
           </a>
 
-          <div class="hidden md:flex items-center gap-8">
-            <a href="/#mission" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Mission</a>
-            <a href="/#concerts" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Concerts</a>
-            <a href="/#rehearsals" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Rehearsals</a>
+          <div class="hidden md:flex items-center gap-5" data-desktop-nav>
+            <a href="/" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Home</a>
+            <a href="/childrens-choir" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Children's Choir</a>
             <a href="/leadership" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Leadership</a>
+            <a href="/past-events" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Past Events</a>
+            <a href="/media" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Media</a>
             <a href="/members" class="text-white transition uppercase text-sm font-medium tracking-wide border-b-2 border-teal-400">Members</a>
             <a href="/#advertisers" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Advertisers</a>
-            <button class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full transition uppercase text-sm font-medium tracking-wide">
-              Donate
-            </button>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-            <SignedOut>
-              <a href="/sign-in" class="bg-white text-[#1a401b] px-6 py-2 rounded-full transition hover:bg-[#d4e8d4] uppercase text-sm font-medium tracking-wide">
-                Login
-              </a>
-            </SignedOut>
           </div>
 
           <!-- Mobile menu button -->
-          <button class="md:hidden p-2 text-white">
+          <button class="md:hidden p-2 text-white" type="button" aria-label="Open navigation" aria-expanded="false" data-mobile-menu-button>
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
         </div>
+        <div class="hidden md:hidden pt-4 text-white/90 uppercase text-sm font-medium tracking-wide" data-mobile-menu></div>
       </div>
     </nav>
 
@@ -388,6 +380,29 @@ const upcomingEvents = allEvents
         </div>
       </div>
     </footer>
+
+    <script>
+      const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+      const mobileMenu = document.querySelector('[data-mobile-menu]');
+      const desktopNav = document.querySelector('[data-desktop-nav]');
+
+      if (mobileMenuButton && mobileMenu && desktopNav) {
+        mobileMenu.innerHTML = desktopNav.innerHTML;
+        mobileMenuButton.addEventListener('click', () => {
+          const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+          mobileMenu.classList.toggle('hidden', isOpen);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.classList.add('block', 'py-3', 'border-t', 'border-white/10');
+          link.addEventListener('click', () => {
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    </script>
 
   </body>
 </html>

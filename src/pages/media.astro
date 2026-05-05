@@ -1,0 +1,205 @@
+---
+import '../styles/global.css';
+import content from '../content.json';
+import ConcertPhotoSection from '../components/ConcertPhotoSection.astro';
+
+const sections = [
+  {
+    title: 'Spring 2026',
+    photos: [
+      { alt: 'Spring 2026 photo', src: '/images/concert-photos/Spring%202026/20260502%20CRC%20Spring%20Concert-11.jpg' },
+      { alt: 'Spring 2026 photo', src: '/images/concert-photos/Spring%202026/20260502%20CRC%20Spring%20Concert-13.jpg' },
+      { alt: 'Spring 2026 photo', src: '/images/concert-photos/Spring%202026/20260502%20CRC%20Spring%20Concert-14.jpg' },
+      { alt: 'Spring 2026 photo', src: '/images/concert-photos/Spring%202026/20260502%20CRC%20Spring%20Concert-18.jpg' },
+      { alt: 'Spring 2026 photo', src: '/images/concert-photos/Spring%202026/20260502%20CRC%20Spring%20Concert-19.jpg' },
+      { alt: 'Spring 2026 photo', src: '/images/concert-photos/Spring%202026/20260502%20CRC%20Spring%20Concert-20.jpg' },
+      { alt: 'Spring 2026 photo', src: '/images/concert-photos/Spring%202026/20260502%20CRC%20Spring%20Concert-7.jpg' },
+      { alt: 'Spring 2026 photo', src: '/images/concert-photos/Spring%202026/20260502%20CRC%20Spring%20Concert-9.jpg' },
+    ],
+    videos: [],
+  },
+  {
+    title: 'Winter 2025',
+    photos: [],
+    videos: [
+      { title: 'Winter 2025 Full Playlist', url: 'https://www.youtube.com/watch?v=SvxmduU4mH8&list=PL-edVkXXUIRtgzWVSdm6rnUZZ3zeoYGEk', youtubeId: 'SvxmduU4mH8', type: 'playlist' },
+      { title: 'Illuminare', url: 'https://www.youtube.com/watch?v=SvxmduU4mH8&t=160s', youtubeId: 'SvxmduU4mH8' },
+      { title: 'Hark the Herald Angels Sing', url: 'https://www.youtube.com/watch?v=o6n11FptUsc', youtubeId: 'o6n11FptUsc' },
+      { title: 'Fly to Paradise', url: 'https://www.youtube.com/watch?v=-dBiJD-_kKE', youtubeId: '-dBiJD-_kKE' },
+      { title: 'One Voice', url: 'https://www.youtube.com/watch?v=9NAfJ9_giDU', youtubeId: '9NAfJ9_giDU' },
+      { title: 'Sing Dem Herrn', url: 'https://www.youtube.com/watch?v=FdW40X4wtyI', youtubeId: 'FdW40X4wtyI' },
+      { title: 'Awake the Harp', url: 'https://www.youtube.com/watch?v=C9tp3vT8z6w', youtubeId: 'C9tp3vT8z6w' },
+      { title: 'Sing Together', url: 'https://www.youtube.com/watch?v=-h49X34K1Bg', youtubeId: '-h49X34K1Bg' },
+      { title: 'Make Them Hear You', url: 'https://www.youtube.com/watch?v=kkkBDeD9TMI', youtubeId: 'kkkBDeD9TMI' },
+      { title: 'Lift Every Voice and Sing', url: 'https://www.youtube.com/watch?v=TLq2dG-kJZQ', youtubeId: 'TLq2dG-kJZQ' },
+      { title: 'Lift Up Your Voice', url: 'https://www.youtube.com/watch?v=BzCgCdhyTNU', youtubeId: 'BzCgCdhyTNU' },
+    ],
+  },
+  {
+    title: 'Spring 2025',
+    photos: [
+      { alt: 'Spring 2025 photo', src: '/images/concert-photos/Spring%202025/20250503_180806.jpg' },
+      { alt: 'Spring 2025 photo', src: '/images/concert-photos/Spring%202025/20250503_181903.jpg' },
+      { alt: 'Spring 2025 photo', src: '/images/concert-photos/Spring%202025/20250503_182308.jpg' },
+      { alt: 'Spring 2025 photo', src: '/images/concert-photos/Spring%202025/20250503_184130.jpg' },
+      { alt: 'Spring 2025 photo', src: '/images/concert-photos/Spring%202025/20250503_184317.jpg' },
+    ],
+    videos: [
+      { title: 'Spring 2025 Full Playlist', url: 'https://www.youtube.com/watch?v=SF4QXQ1B34I&list=PL-edVkXXUIRvLc9Ez4EoLqEcKSa4nyNbO', youtubeId: 'SF4QXQ1B34I', type: 'playlist' },
+      { title: 'A Dream is a Wish Your Heart Makes', url: 'https://www.youtube.com/watch?v=SF4QXQ1B34I', youtubeId: 'SF4QXQ1B34I' },
+      { title: 'Hold Fast to Dreams', url: 'https://www.youtube.com/watch?v=GuAPbUxt-Z0', youtubeId: 'GuAPbUxt-Z0' },
+      { title: 'When You Wish Upon a Star', url: 'https://www.youtube.com/watch?v=Nlvk4Y9b2mM', youtubeId: 'Nlvk4Y9b2mM' },
+      { title: 'Sure on this Shining Night', url: 'https://www.youtube.com/watch?v=paXTZbeb4GU', youtubeId: 'paXTZbeb4GU' },
+      { title: 'I Want Two Wings', url: 'https://www.youtube.com/watch?v=70jj7sf1BsU', youtubeId: '70jj7sf1BsU' },
+      { title: 'How Far I’ll Go', url: 'https://www.youtube.com/watch?v=WlgZJFANZok', youtubeId: 'WlgZJFANZok' },
+      { title: 'The Greatest Love of All', url: 'https://www.youtube.com/watch?v=hIx2EMVumOo', youtubeId: 'hIx2EMVumOo' },
+      { title: 'Rise Up', url: 'https://www.youtube.com/watch?v=_nz-vNdlO2s', youtubeId: '_nz-vNdlO2s' },
+      { title: 'City Called Heaven', url: 'https://www.youtube.com/watch?v=7a5FM000-t8', youtubeId: '7a5FM000-t8' },
+      { title: 'Go the Distance', url: 'https://www.youtube.com/watch?v=y0kcfIxlkXw', youtubeId: 'y0kcfIxlkXw' },
+      { title: 'Part of Your World', url: 'https://www.youtube.com/watch?v=C7LlItM3Fow', youtubeId: 'C7LlItM3Fow' },
+      { title: 'This Wish', url: 'https://www.youtube.com/watch?v=hCFIlIDFoew', youtubeId: 'hCFIlIDFoew' },
+      { title: 'A Million Dreams', url: 'https://www.youtube.com/watch?v=RwlaASTzenc', youtubeId: 'RwlaASTzenc' },
+      { title: 'Don’t Stop Believing', url: 'https://www.youtube.com/watch?v=UTi0zn3Bn8Q', youtubeId: 'UTi0zn3Bn8Q' },
+      { title: 'Look at the World', url: 'https://www.youtube.com/watch?v=AjiKyoZcb5c', youtubeId: 'AjiKyoZcb5c' },
+    ],
+  },
+  {
+    title: 'Winter 2024',
+    photos: [
+      { alt: 'Winter 2024 photo', src: '/images/concert-photos/Winter%202024/20241208%20CRC%20Winter%20Concert%20008.jpeg' },
+      { alt: 'Winter 2024 photo', src: '/images/concert-photos/Winter%202024/20241208%20CRC%20Winter%20Concert%20009.jpeg' },
+      { alt: 'Winter 2024 photo', src: '/images/concert-photos/Winter%202024/20241208%20CRC%20Winter%20Concert%20014.jpeg' },
+      { alt: 'Winter 2024 photo', src: '/images/concert-photos/Winter%202024/20241208%20CRC%20Winter%20Concert%20018.jpeg' },
+      { alt: 'Winter 2024 photo', src: '/images/concert-photos/Winter%202024/20241208%20CRC%20Winter%20Concert%20021.jpeg' },
+      { alt: 'Winter 2024 photo', src: '/images/concert-photos/Winter%202024/20241208%20CRC%20Winter%20Concert%20025.jpeg' },
+      { alt: 'Winter 2024 photo', src: '/images/concert-photos/Winter%202024/20241208%20CRC%20Winter%20Concert%20028.jpeg' },
+      { alt: 'Winter 2024 photo', src: '/images/concert-photos/Winter%202024/20241208%20CRC%20Winter%20Concert%20033.jpeg' },
+      { alt: 'Winter 2024 photo', src: '/images/concert-photos/Winter%202024/20241208%20CRC%20Winter%20Concert%20040.jpeg' },
+    ],
+    videos: [
+      { title: 'Winter 2024 Full Playlist', url: 'https://www.youtube.com/watch?v=lDUXu9GZgac&list=PL-edVkXXUIRtlM_EztR7FLIRAg-NMnCXg', youtubeId: 'lDUXu9GZgac', type: 'playlist' },
+      { title: 'White World of Winter', url: 'https://www.youtube.com/watch?v=lDUXu9GZgac', youtubeId: 'lDUXu9GZgac' },
+      { title: 'Leise Rieselt der Schnee', url: 'https://www.youtube.com/watch?v=O-LwEAVLj4Q', youtubeId: 'O-LwEAVLj4Q' },
+      { title: 'Un Soir de Neige', url: 'https://www.youtube.com/watch?v=ByQrex4sWPc', youtubeId: 'ByQrex4sWPc' },
+      { title: 'Japanese Snow Song', url: 'https://www.youtube.com/watch?v=V3lXE-jXK-o', youtubeId: 'V3lXE-jXK-o' },
+      { title: 'Snow by Morning', url: 'https://www.youtube.com/watch?v=b2bGSQE9bJY', youtubeId: 'b2bGSQE9bJY' },
+      { title: 'It Feels New', url: 'https://www.youtube.com/watch?v=7KghvZnzbgA', youtubeId: '7KghvZnzbgA' },
+      { title: 'Frozen Heart', url: 'https://www.youtube.com/watch?v=a58xLD-1qAE', youtubeId: 'a58xLD-1qAE' },
+      { title: 'Glow', url: 'https://www.youtube.com/watch?v=HqyGUhAabMQ', youtubeId: 'HqyGUhAabMQ' },
+      { title: 'Walking in the Air', url: 'https://www.youtube.com/watch?v=rJF7hi6DFAg', youtubeId: 'rJF7hi6DFAg' },
+      { title: 'Frosty the Snowman', url: 'https://www.youtube.com/watch?v=hQbt2g4PR1A', youtubeId: 'hQbt2g4PR1A' },
+      { title: 'Dance of the Sugar Plum Fairy', url: 'https://www.youtube.com/watch?v=E_17d0SwQZE', youtubeId: 'E_17d0SwQZE' },
+      { title: 'White Winter Hymnal', url: 'https://www.youtube.com/watch?v=qlFzmRWOhII', youtubeId: 'qlFzmRWOhII' },
+      { title: 'Amid the Falling Snow', url: 'https://www.youtube.com/watch?v=lIs5BWs3mYQ', youtubeId: 'lIs5BWs3mYQ' },
+      { title: 'Winter Song', url: 'https://www.youtube.com/watch?v=OdOCP5fkhKc', youtubeId: 'OdOCP5fkhKc' },
+      { title: 'Sleigh Ride', url: 'https://www.youtube.com/watch?v=uhm-322R7eU', youtubeId: 'uhm-322R7eU' },
+      { title: 'Winter Wonderland', url: 'https://www.youtube.com/watch?v=iC95vFg4kkY', youtubeId: 'iC95vFg4kkY' },
+      { title: 'Let it Snow', url: 'https://www.youtube.com/watch?v=IJC5vsmfN_k', youtubeId: 'IJC5vsmfN_k' },
+      { title: 'Look at the World', url: 'https://www.youtube.com/watch?v=2Y31VIMk2bw', youtubeId: '2Y31VIMk2bw' },
+    ],
+  },
+  {
+    title: 'Spring 2024',
+    photos: [
+      { alt: 'Spring 2024 photo', src: '/images/concert-photos/Spring%202024/20240511%20CRC%20Spring%20Concert%20021.jpeg' },
+      { alt: 'Spring 2024 photo', src: '/images/concert-photos/Spring%202024/20240511%20CRC%20Spring%20Concert%20023.jpeg' },
+      { alt: 'Spring 2024 photo', src: '/images/concert-photos/Spring%202024/20240511%20CRC%20Spring%20Concert%20034.jpeg' },
+      { alt: 'Spring 2024 photo', src: '/images/concert-photos/Spring%202024/20240511%20CRC%20Spring%20Concert%20035.jpeg' },
+      { alt: 'Spring 2024 photo', src: '/images/concert-photos/Spring%202024/20240511%20CRC%20Spring%20Concert%20045.jpeg' },
+      { alt: 'Spring 2024 photo', src: '/images/concert-photos/Spring%202024/20240511%20CRC%20Spring%20Concert%20047.jpeg' },
+    ],
+    videos: [],
+  },
+  {
+    title: 'Archives',
+    photos: [
+      { alt: 'Archives photo', src: '/images/concert-photos/Archives/IMG_3417.jpg' },
+      { alt: 'Archives photo', src: '/images/concert-photos/Archives/Welcome-CRC.jpg', title: 'Welcome CRC' },
+      { alt: 'Archives photo', src: '/images/concert-photos/Archives/chorale-2018-3.jpg', title: 'Full chorale group 2018' },
+      { alt: 'Archives photo', src: '/images/concert-photos/Archives/crc-2024.png', title: 'Full chorale group 2024' },
+    ],
+    videos: [],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Metamorphous&display=swap" rel="stylesheet">
+    <title>Media - Charles River Chorale</title>
+  </head>
+  <body class="font-sans text-slate-800 bg-white">
+    <nav class="fixed top-0 w-full bg-[#1a401b] shadow-lg z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center gap-4 shrink-0" aria-label="Charles River Chorale home">
+            <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="h-16" />
+            <div class="leading-tight">
+              <div class="text-lg font-semibold text-white" style="font-family: 'Metamorphous', serif;">Charles River</div>
+              <div class="text-3xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">Chorale</div>
+            </div>
+          </a>
+          <div class="hidden md:flex items-center gap-5" data-desktop-nav>
+            <a href="/" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Home</a>
+            <a href="/childrens-choir" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Children's Choir</a>
+            <a href="/leadership" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Leadership</a>
+            <a href="/past-events" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Past Events</a>
+            <a href="/media" class="text-white transition uppercase text-sm font-medium tracking-wide border-b-2 border-teal-400">Media</a>
+            <a href="/members" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Members</a>
+            <a href="/#advertisers" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Advertisers</a>
+          </div>
+          <button class="md:hidden p-2 text-white" type="button" aria-label="Open navigation" aria-expanded="false" data-mobile-menu-button>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="hidden md:hidden pt-4 text-white/90 uppercase text-sm font-medium tracking-wide" data-mobile-menu></div>
+      </div>
+    </nav>
+
+    <section class="relative mt-20 bg-gradient-to-br from-[#1a401b] to-[#2a5a2b] text-white py-24">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="font-serif text-6xl mb-6">Media</h1>
+        <p class="text-xl text-white/80 max-w-2xl mx-auto">Browse concert photos, full playlists, and individual song videos by season.</p>
+      </div>
+    </section>
+
+    <main class="py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6 space-y-8">
+        {sections.map((section, index) => (
+          <ConcertPhotoSection title={section.title} photos={section.photos} videos={section.videos}} />
+        ))}
+      </div>
+    </main>
+
+    <script>
+      const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+      const mobileMenu = document.querySelector('[data-mobile-menu]');
+      const desktopNav = document.querySelector('[data-desktop-nav]');
+
+      if (mobileMenuButton && mobileMenu && desktopNav) {
+        mobileMenu.innerHTML = desktopNav.innerHTML;
+        mobileMenuButton.addEventListener('click', () => {
+          const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+          mobileMenu.classList.toggle('hidden', isOpen);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.classList.add('block', 'py-3', 'border-t', 'border-white/10');
+          link.addEventListener('click', () => {
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

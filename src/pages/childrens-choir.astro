@@ -1,0 +1,202 @@
+---
+import '../styles/global.css';
+import content from '../content.json';
+
+const heroSlides = [
+  { image: '/images/children/CRCC-1.jpeg', alt: "Charles River Children's Choir performance" },
+  { image: '/images/children/CRCC-2.jpg', alt: "Charles River Children's Choir singers" },
+  { image: '/images/children/CRCC-3.jpg', alt: "Charles River Children's Choir rehearsal" },
+  { image: '/images/children/CRCC-4.jpg', alt: "Charles River Children's Choir group" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Metamorphous&display=swap" rel="stylesheet">
+    <title>Children's Choir - Charles River Chorale</title>
+  </head>
+  <body class="font-sans text-slate-800 bg-white">
+    <nav class="fixed top-0 w-full bg-[#1a401b] shadow-lg z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center gap-4 shrink-0" aria-label="Charles River Chorale home">
+            <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="h-16" />
+            <div class="leading-tight">
+              <div class="text-lg font-semibold text-white" style="font-family: 'Metamorphous', serif;">Charles River</div>
+              <div class="text-3xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">Chorale</div>
+            </div>
+          </a>
+          <div class="hidden md:flex items-center gap-5" data-desktop-nav>
+            <a href="/" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Home</a>
+            <a href="/childrens-choir" class="text-white transition uppercase text-sm font-medium tracking-wide border-b-2 border-teal-400">Children's Choir</a>
+            <a href="/leadership" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Leadership</a>
+            <a href="/past-events" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Past Events</a>
+            <a href="/media" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Media</a>
+            <a href="/members" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Members</a>
+            <a href="/#advertisers" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Advertisers</a>
+          </div>
+          <button class="md:hidden p-2 text-white" type="button" aria-label="Open navigation" aria-expanded="false" data-mobile-menu-button>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="hidden md:hidden pt-4 text-white/90 uppercase text-sm font-medium tracking-wide" data-mobile-menu></div>
+      </div>
+    </nav>
+
+    <section class="children-hero relative mt-20 min-h-[42rem] flex items-end bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0">
+        {heroSlides.map((slide, index) => (
+          <div class={`children-hero-slide absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'opacity-100' : 'opacity-0'}`} data-slide-index={index}>
+            <img src={slide.image} alt={slide.alt} class="w-full h-full object-cover" />
+          </div>
+        ))}
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-slate-950/15"></div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        {heroSlides.map((_, index) => (
+          <button class={`children-hero-dot h-3 rounded-full transition-all ${index === 0 ? 'w-8 bg-white' : 'w-3 bg-white/50 hover:bg-white/75'}`} data-slide={index} aria-label={`Show children's choir photo ${index + 1}`} />
+        ))}
+      </div>
+      <div class="relative max-w-6xl mx-auto px-6 pb-24 w-full">
+        <p class="text-sm uppercase tracking-[0.25em] text-teal-200 font-semibold mb-5">Youth Music Program</p>
+        <h1 class="font-serif text-6xl md:text-7xl max-w-3xl mb-6">Charles River Children's Choir</h1>
+        <p class="text-xl text-white/85 max-w-2xl leading-relaxed">
+          A music program for young singers in Millis and throughout the Metro West Region.
+        </p>
+      </div>
+    </section>
+
+    <main>
+      <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-[1.4fr_0.8fr] gap-12">
+          <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+            <h2 class="font-serif text-5xl text-slate-900 mb-8">2026 Season</h2>
+            <p>The Charles River Children's Choir is starting up for its 11th season! The program is available for grades 2 - 6 and meets at the Clyde F. Brown Elementary School in Millis.</p>
+            <p>Rehearsals are Thursday, 4:30 to 6:00PM and runs for 16 weeks. There are two performances, one with the Charles River Chorale at the winter concert.</p>
+            <p>The cost is $400. Sign up with the Millis Recreational Department 508.376.7050.</p>
+          </div>
+          <aside class="bg-[#d4e8d4] rounded-3xl p-8 h-fit border border-[#2a5a2b]/20">
+            <h3 class="font-serif text-3xl text-slate-900 mb-5">Program At A Glance</h3>
+            <dl class="space-y-4 text-slate-700">
+              <div><dt class="font-semibold text-slate-900">Grades</dt><dd>2 - 6</dd></div>
+              <div><dt class="font-semibold text-slate-900">Rehearsals</dt><dd>Thursday, 4:30 to 6:00PM</dd></div>
+              <div><dt class="font-semibold text-slate-900">Location</dt><dd>Clyde F. Brown Elementary School, Millis</dd></div>
+              <div><dt class="font-semibold text-slate-900">Registration</dt><dd>Millis Recreational Department 508.376.7050</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="py-24 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-6">
+          <h2 class="font-serif text-5xl text-slate-900 mb-10">About the Children's Choir</h2>
+          <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+            <p>As part of the Chorale's mission to provide music opportunities for children in the Metro West Region, the Chorale has sponsored a children's choir. This group will be an independent non-profit organization to provide a place for children to join together and learn how to perform and create music.</p>
+            <p>For the upcoming year, we will be working with the Millis Recreational Department to spread the word and generate interest. Let everyone you know about this great opportunity.</p>
+            <p>The Charles River Children's Choir invites all children ages 6 - 10 from Millis and throughout the Metro West Region to join us in a new music program. The Choir will meet weekly starting in September as we prepare for a performance in December.</p>
+            <p>The Choir will learn how to read music, hear music and make music together. This program is sponsored by The Charles River Chorale, a 60 piece regional adult choir that performs a holiday and spring concert in Millis. The Children's Choir will be invited to sing with the CRC twice a year in addition to their stand alone concert.</p>
+            <p>This combined performance is a truly unique and very valuable opportunity for our children's musical education.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+          <p class="text-sm uppercase tracking-[0.2em] text-teal-700 font-semibold mb-4">Choir Director</p>
+          <h2 class="font-serif text-5xl text-slate-900 mb-8">Lelia Tenreyro-Viana</h2>
+          <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+            <p>Lelia Tenreyro-Viana is in her 8th year directing the Charles River Children's Choir. Her professional career began when she was hired as a member of Argentina's National Chidren's Choir. Soon after, she began her formal musical studies at the Conservatorio Municipal de Musica Manuel de Falla in Buenos Aires, where she studied French Horn, Voice, and Choral Conducting.</p>
+            <p>In college Lelia was selected to premiere a number of contemporary pieces by composers at Brooklyn College's Conservatory of Music in New York. She has worked as a vocal technique and language coach at the New York Choral Music Initiative, a program sponsored by the New York Foundation for the Arts and the Metropolitan Opera Guild.</p>
+            <p>Currently she teaches Spanish and music at Clyde F. Brown Elementary School in Millis, serves as Director of the Music Ministry, organist, and choir conductor at the Saint Cecilia Church in Ashland, MA., and is a member of the Tanglewood Festival Chorus, which performs year-round with the Boston Symphony Orchestra and Boston Pops.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-16">
+      <div class="max-w-6xl mx-auto px-6 text-center text-slate-400">
+        <p class="font-serif text-3xl text-white mb-3">{content.site.name}</p>
+        <p>{content.site.tagline}</p>
+      </div>
+    </footer>
+
+    <script>
+      const childrenHeroSlides = document.querySelectorAll('.children-hero-slide');
+      const childrenHeroDots = document.querySelectorAll('.children-hero-dot');
+      let childrenHeroIndex = 0;
+      let childrenHeroTimer: number;
+
+      function showChildrenHeroSlide(index: number) {
+        childrenHeroSlides.forEach((slide) => {
+          slide.classList.remove('opacity-100');
+          slide.classList.add('opacity-0');
+        });
+        childrenHeroDots.forEach((dot) => {
+          dot.classList.remove('w-8', 'bg-white');
+          dot.classList.add('w-3', 'bg-white/50');
+        });
+        childrenHeroSlides[index]?.classList.remove('opacity-0');
+        childrenHeroSlides[index]?.classList.add('opacity-100');
+        childrenHeroDots[index]?.classList.remove('w-3', 'bg-white/50');
+        childrenHeroDots[index]?.classList.add('w-8', 'bg-white');
+        childrenHeroIndex = index;
+      }
+
+      function nextChildrenHeroSlide() {
+        showChildrenHeroSlide((childrenHeroIndex + 1) % childrenHeroSlides.length);
+      }
+
+      function startChildrenHeroCarousel() {
+        if (childrenHeroSlides.length > 1) {
+          childrenHeroTimer = window.setInterval(nextChildrenHeroSlide, 5000);
+        }
+      }
+
+      function restartChildrenHeroCarousel() {
+        clearInterval(childrenHeroTimer);
+        startChildrenHeroCarousel();
+      }
+
+      childrenHeroDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showChildrenHeroSlide(index);
+          restartChildrenHeroCarousel();
+        });
+      });
+
+      startChildrenHeroCarousel();
+    </script>
+
+    <script>
+      const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+      const mobileMenu = document.querySelector('[data-mobile-menu]');
+      const desktopNav = document.querySelector('[data-desktop-nav]');
+
+      if (mobileMenuButton && mobileMenu && desktopNav) {
+        mobileMenu.innerHTML = desktopNav.innerHTML;
+        mobileMenuButton.addEventListener('click', () => {
+          const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+          mobileMenu.classList.toggle('hidden', isOpen);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.classList.add('block', 'py-3', 'border-t', 'border-white/10');
+          link.addEventListener('click', () => {
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    </script>
+
+  </body>
+</html>

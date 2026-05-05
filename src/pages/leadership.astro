@@ -8,7 +8,7 @@ import content from '../content.json';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Metamorphous&display=swap" rel="stylesheet">
@@ -20,32 +20,32 @@ import content from '../content.json';
     <nav class="fixed top-0 w-full bg-[#1a401b] shadow-lg z-50">
       <div class="max-w-7xl mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <a href="/" class="flex items-center gap-4">
-            <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="h-14" />
-            <div>
-              <h1 class="text-2xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">{content.site.name}</h1>
+          <a href="/" class="flex items-center gap-4 shrink-0" aria-label="Charles River Chorale home">
+            <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="h-16" />
+            <div class="leading-tight">
+              <div class="text-lg font-semibold text-white" style="font-family: 'Metamorphous', serif;">Charles River</div>
+              <div class="text-3xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">Chorale</div>
             </div>
           </a>
 
-          <div class="hidden md:flex items-center gap-8">
-            <a href="/#mission" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Mission</a>
-            <a href="/#concerts" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Concerts</a>
-            <a href="/#rehearsals" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Rehearsals</a>
+          <div class="hidden md:flex items-center gap-5" data-desktop-nav>
+            <a href="/" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Home</a>
+            <a href="/childrens-choir" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Children's Choir</a>
             <a href="/leadership" class="text-white transition uppercase text-sm font-medium tracking-wide border-b-2 border-teal-400">Leadership</a>
+            <a href="/past-events" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Past Events</a>
+            <a href="/media" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Media</a>
             <a href="/members" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Members</a>
             <a href="/#advertisers" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Advertisers</a>
-            <button class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full transition uppercase text-sm font-medium tracking-wide">
-              Donate
-            </button>
           </div>
 
           <!-- Mobile menu button -->
-          <button class="md:hidden p-2 text-white">
+          <button class="md:hidden p-2 text-white" type="button" aria-label="Open navigation" aria-expanded="false" data-mobile-menu-button>
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
         </div>
+        <div class="hidden md:hidden pt-4 text-white/90 uppercase text-sm font-medium tracking-wide" data-mobile-menu></div>
       </div>
     </nav>
 
@@ -62,217 +62,40 @@ import content from '../content.json';
     <!-- Musical Leadership -->
     <section class="py-24 bg-white">
       <div class="max-w-6xl mx-auto px-6">
-        <h2 class="font-serif text-4xl text-slate-900 mb-16 text-center">Musical Leadership</h2>
-
+        
         <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <!-- Director -->
           <div class="bg-slate-50 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
             <div class="aspect-square overflow-hidden">
-              <img src="/images/headshots/ashley-nelson-1.jpg" alt="Director Name" class="w-full h-full object-cover" />
+              <img src="/images/headshots/ashley-nelson-1.jpg" alt="Ashley Nelson-Oneschuk" class="w-full h-full object-cover" />
             </div>
-            <div class="p-8 text-center">
-              <h3 class="font-serif text-3xl text-slate-900 mb-2">Ashley Nelson-Oneschuk</h3>
-              <p class="text-teal-600 font-medium mb-4 uppercase text-sm tracking-wide">Music Director</p>
-              <p class="text-slate-600 leading-relaxed">
-                Brief bio about the director's background, experience, and musical philosophy.
-              </p>
+            <div class="p-8">
+              <h3 class="font-serif text-3xl text-slate-900 mb-2 text-center">Ashley Nelson-Oneschuk</h3>
+              <p class="text-teal-600 font-medium mb-6 uppercase text-sm tracking-wide text-center">Music Director</p>
+              <div class="space-y-4 text-slate-600 leading-relaxed">
+                <p>Ashley F. Nelson-Oneschuk has been honored to be the director of the Charles River Chorale since 2015. Ashley holds a master's degree in music education from Boston University's College of Fine Arts and has always taken an active part in MA music education and choral festival organizations, serving on various boards and providing clinics and adjudications around the state.</p>
+                <p>She is currently also the choral director for Medway High School and is a composer and arranger of choral works, several published by Santa Barbara Music Publishing, Inc.</p>
+                <p>She lives in Holliston with her husband, Joe and daughters, Cadence and Skylar.</p>
+                <p><a href="http://www.ashleynelsonmusic.com" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:text-teal-800 font-medium">www.ashleynelsonmusic.com</a></p>
+              </div>
             </div>
           </div>
 
           <!-- Assistant Director -->
           <div class="bg-slate-50 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
-            <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-              <!-- Placeholder for headshot -->
-              <svg class="w-32 h-32 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-              </svg>
+            <div class="aspect-square overflow-hidden">
+              <img src="/images/headshots/susan-fortin.jpg" alt="Susan Fortin" class="w-full h-full object-cover" />
             </div>
-            <div class="p-8 text-center">
-              <h3 class="font-serif text-3xl text-slate-900 mb-2">Susan Fortin</h3>
-              <p class="text-teal-600 font-medium mb-4 uppercase text-sm tracking-wide">Assistant Music Director</p>
-              <p class="text-slate-600 leading-relaxed">
-                Brief bio about the assistant director's background and role in the chorale.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Board of Directors -->
-    <section class="py-24 bg-slate-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="font-serif text-4xl text-slate-900 mb-16 text-center">Board of Directors</h2>
-
-        <!-- Executive Board -->
-        <div class="mb-16">
-          <h3 class="font-serif text-2xl text-slate-800 mb-8 text-center">Executive Committee</h3>
-          <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <!-- President -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
-              <div class="aspect-[4/3] bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-24 h-24 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-6 text-center">
-                <h4 class="font-serif text-2xl text-slate-900 mb-1">Robert Archibald</h4>
-                <p class="text-teal-600 font-medium uppercase text-xs tracking-wide">President</p>
+            <div class="p-8">
+              <h3 class="font-serif text-3xl text-slate-900 mb-2 text-center">Susan Fortin</h3>
+              <p class="text-teal-600 font-medium mb-6 uppercase text-sm tracking-wide text-center">Assistant Music Director</p>
+              <div class="space-y-4 text-slate-600 leading-relaxed">
+                <p>Susan Fortin is an active musician as accompanist, teacher, director and performer in Southeastern Massachusetts and Rhode Island. A native of Iowa, she holds a Bachelor's Degree in Music Education from Iowa State University and a Master's Degree in Accompanying/Chamber Music from Northwestern University in Evanston, IL.</p>
+                <p>Some notable experiences in Ms. Fortin's career include Assistant Director/Accompanist for the Minnetonka Children's Choir in Minneapolis, which toured internationally, placing in competitions with other world renowned youth choirs. She was also a soloist with the Minnetonka Symphony Orchestra. Locally, she taught elementary/middle school music for 25 years in Attleboro, and teaches privately.</p>
+                <p>In addition to her involvement with the Charles River Chorale, Susan works alongside local high schools and studios in the region. She currently serves as staff pianist for the Rhode Island Children's Chorus and the Carillon Women's Chorus in Lincoln, RI. Together with her husband, Phil, she holds the position of Director of Music at St. Aidan-St. Patrick Church in Cumberland, RI. Susan has collaborated with Phil to produce and record three CDs of inspirational music. Their musical works are published under the name Simply Liturgical Music.</p>
+                <p>Susan finds great joy in collaborating with musicians from all walks of life. When not at the piano, she enjoys the outdoors by the water, time in the kitchen, and crafting. She and Phil live in Seekonk and have four children.</p>
               </div>
             </div>
-
-            <!-- Vice President -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
-              <div class="aspect-[4/3] bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-24 h-24 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-6 text-center">
-                <h4 class="font-serif text-2xl text-slate-900 mb-1">Bethany Gerry</h4>
-                <p class="text-teal-600 font-medium uppercase text-xs tracking-wide">Vice President</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Board Members -->
-        <div>
-          <h3 class="font-serif text-2xl text-slate-800 mb-8 text-center">Board Members</h3>
-          <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Board Member Template - Repeat as needed -->
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Karen Gehm</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Treasurer</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Kerri McDonald</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Secretary</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Greg Quillop</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Board Member</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Meg Quillop</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Board Member</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Brian Kuhn</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Board Member</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Anne Czarnowski,</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Board Member</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Emily Spiller</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Board Member</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Eric Hoover</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Board Member</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Leah Kerlin-Smith</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Board Member</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Liz Forsythe</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Board Member</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <div class="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <svg class="w-16 h-16 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="p-4 text-center">
-                <h5 class="font-serif text-lg text-slate-900 mb-1">Arindam Pal</h5>
-                <p class="text-teal-600 text-xs uppercase tracking-wide">Board Member</p>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -323,6 +146,29 @@ import content from '../content.json';
         </div>
       </div>
     </footer>
+
+    <script>
+      const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+      const mobileMenu = document.querySelector('[data-mobile-menu]');
+      const desktopNav = document.querySelector('[data-desktop-nav]');
+
+      if (mobileMenuButton && mobileMenu && desktopNav) {
+        mobileMenu.innerHTML = desktopNav.innerHTML;
+        mobileMenuButton.addEventListener('click', () => {
+          const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+          mobileMenu.classList.toggle('hidden', isOpen);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.classList.add('block', 'py-3', 'border-t', 'border-white/10');
+          link.addEventListener('click', () => {
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    </script>
 
   </body>
 </html>

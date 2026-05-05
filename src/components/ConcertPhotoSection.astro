@@ -1,0 +1,96 @@
+---
+interface Photo {
+  src: string;
+  alt: string;
+  title?: string;
+}
+
+interface Video {
+  title: string;
+  url: string;
+  youtubeId: string;
+  type?: 'playlist' | 'video';
+}
+
+interface Props {
+  title: string;
+  photos?: Photo[];
+  videos?: Video[];
+  open?: boolean;
+}
+
+const { title, photos = [], videos = [], open = false } = Astro.props;
+const cover = photos[0];
+const coverVideo = videos[0];
+const coverSrc = cover?.src || (coverVideo ? `https://img.youtube.com/vi/${coverVideo.youtubeId}/hqdefault.jpg` : '/images/logo.png');
+const coverAlt = cover?.alt || `${title} media`;
+const mediaCount = photos.length + videos.length;
+---
+
+<details class="group bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100" open={open}>
+  <summary class="cursor-pointer list-none">
+    <div class="grid md:grid-cols-[18rem_1fr]">
+      <div class="aspect-[4/3] md:aspect-auto bg-slate-100 overflow-hidden">
+        <img src={coverSrc} alt={coverAlt} class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-300" loading="lazy" />
+      </div>
+      <div class="p-6 flex items-center justify-between gap-6">
+        <div>
+          <p class="text-sm uppercase tracking-[0.18em] text-teal-700 font-semibold mb-2">Concert Media</p>
+          <h2 class="font-serif text-4xl text-slate-900">{title}</h2>
+          <p class="text-slate-500 mt-2">
+            {photos.length > 0 && `${photos.length} photos`}
+            {photos.length > 0 && videos.length > 0 && ' / '}
+            {videos.length > 0 && `${videos.length} videos`}
+            {mediaCount === 0 && 'No media yet'}
+          </p>
+        </div>
+        <span class="shrink-0 w-11 h-11 rounded-full bg-[#1a401b] text-white flex items-center justify-center text-2xl leading-none group-open:rotate-45 transition">
+          +
+        </span>
+      </div>
+    </div>
+  </summary>
+
+  <div class="border-t border-slate-100 p-5 md:p-6 bg-slate-50">
+    {videos.length > 0 && (
+      <section class={photos.length > 0 ? 'mb-8' : ''}>
+        <h3 class="font-serif text-3xl text-slate-900 mb-5">Videos</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {videos.map((video) => (
+            <a href={video.url} target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition border border-slate-100">
+              <div class="relative aspect-video overflow-hidden bg-slate-900">
+                <img src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`} alt={video.title} class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-300" loading="lazy" />
+                <div class="absolute inset-0 bg-slate-950/20 flex items-center justify-center">
+                  <span class="w-14 h-14 rounded-full bg-white/90 text-[#1a401b] flex items-center justify-center shadow-lg">
+                    <span class="ml-1 w-0 h-0 border-y-[10px] border-y-transparent border-l-[16px] border-l-[#1a401b]"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="p-4">
+                <p class="text-xs uppercase tracking-[0.14em] text-teal-700 font-semibold mb-2">
+                  {video.type === 'playlist' ? 'Playlist' : 'YouTube'}
+                </p>
+                <h4 class="font-serif text-xl text-slate-900 leading-tight">{video.title}</h4>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {photos.length > 0 && (
+      <section>
+        <h3 class="font-serif text-3xl text-slate-900 mb-5">Photos</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {photos.map((photo) => (
+            <a href={photo.src} target="_blank" rel="noopener noreferrer" class="block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition border border-slate-100">
+              <div class="aspect-[4/3] overflow-hidden bg-slate-100">
+                <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover hover:scale-[1.03] transition duration-300" loading="lazy" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</details>

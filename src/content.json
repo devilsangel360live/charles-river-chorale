@@ -27,15 +27,15 @@
   },
   "nextConcert": {
     "date": {
-      "day": "7",
-      "month": "December",
-      "year": "2025",
-      "dayOfWeek": "Sunday Evening"
+      "day": "To be announced",
+      "month": "To be announced",
+      "year": "2026",
+      "dayOfWeek": "To be announced"
     },
-    "title": "Lift your heart and sing",
-    "description": "Enjoy a winter evening of spiritual and classical favorites, featuring beloved classics and contemporary arrangements.",
-    "venue": "Medway High School",
-    "time": "7:30 PM",
+    "title": "To be announced",
+    "description": "To be announced",
+    "venue": "To be announced",
+    "time": "To be announced",
     "tag": "chorale",
     "ticketLink": "#"
   },
@@ -57,23 +57,98 @@
     "subtitle": "Thank you to our generous advertisers",
     "logos": [
       {
-        "name": "SPONSOR",
-        "image": "/images/logos/sponsor.png",
+        "name": "A+ Consulting",
+        "image": "/images/ads/AConsulting.png",
         "url": "#"
       },
       {
-        "name": "SPONSOR",
-        "image": "/images/logos/sponsor.png",
+        "name": "Body Fit Training",
+        "image": "/images/ads/Body_Fit2.png",
         "url": "#"
       },
       {
-        "name": "SPONSOR",
-        "image": "/images/logos/sponsor.png",
+        "name": "Charles River Bank",
+        "image": "/images/ads/Charles-River-Bank.png",
         "url": "#"
       },
       {
-        "name": "SPONSOR",
-        "image": "/images/logos/sponsor.png",
+        "name": "CommLink",
+        "image": "/images/ads/CommLink.png",
+        "url": "#"
+      },
+      {
+        "name": "Czarnowski Consulting",
+        "image": "/images/ads/Czarnowski-Consulting.png",
+        "url": "#"
+      },
+      {
+        "name": "Dedham Savings",
+        "image": "/images/ads/dedham-savings.png",
+        "url": "#"
+      },
+      {
+        "name": "Diana Jud Juice Plus",
+        "image": "/images/ads/Diana-Jud-Juiceplus-Ad-for-CRC-2024.png",
+        "url": "#"
+      },
+      {
+        "name": "Dr. Carchidi",
+        "image": "/images/ads/Dr.-Carchidi (1).png",
+        "url": "#"
+      },
+      {
+        "name": "For The Love Newborn Care",
+        "image": "/images/ads/For-The-Love-Newborn-Care.png",
+        "url": "#"
+      },
+      {
+        "name": "Gloria Lee",
+        "image": "/images/ads/Gloria-Lee.jpg",
+        "url": "#"
+      },
+      {
+        "name": "Green Compass",
+        "image": "/images/ads/green-compass.png",
+        "url": "#"
+      },
+      {
+        "name": "Johnson Construction",
+        "image": "/images/ads/Johnson-Construction.png",
+        "url": "#"
+      },
+      {
+        "name": "Lawn Management",
+        "image": "/images/ads/Lawn-Management.png",
+        "url": "#"
+      },
+      {
+        "name": "Linda Cardell",
+        "image": "/images/ads/Linda-Cardell.png",
+        "url": "#"
+      },
+      {
+        "name": "Mary Kay",
+        "image": "/images/ads/Mary-Kay.png",
+        "url": "#"
+      },
+      {
+        "name": "Norfolk Church",
+        "image": "/images/ads/Norfolk-Church.png",
+        "url": "#"
+      },
+      {
+        "name": "Quinwell Travel",
+        "image": "/images/ads/Quinwell-Travel.png",
+        "url": "#"
+      },
+      {
+        "name": "Restaurant 89",
+        "image": "/images/ads/Restaurant89.png",
+        "url": "#"
+      },
+      {
+        "name": "Tim Rice Photo",
+        "image": "/images/ads/TRPCharelsRiverChorale-Ad_Master-copy.jpg",
         "url": "#"
       }
     ]

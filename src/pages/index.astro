@@ -9,11 +9,10 @@ import content from '../content.json';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Metamorphous&display=swap" rel="stylesheet">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <title>Charles River Chorale</title>
   </head>
   <body class="font-sans text-slate-800 bg-white">
@@ -22,33 +21,32 @@ import content from '../content.json';
     <nav class="fixed top-0 w-full bg-[#1a401b] shadow-lg z-50">
       <div class="max-w-7xl mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <div class="flex items-center gap-4">
+          <a href="/" class="flex items-center gap-4 shrink-0" aria-label="Charles River Chorale home">
             <img src="/images/logos/logo-transparent.png" alt="Charles River Chorale Logo" class="h-16" />
             <div class="leading-tight">
               <div class="text-lg font-semibold text-white" style="font-family: 'Metamorphous', serif;">Charles River</div>
               <div class="text-3xl font-semibold text-white" style="font-family: 'Metamorphous', serif;">Chorale</div>
             </div>
-          </div>
+          </a>
 
-          <div class="hidden md:flex items-center gap-8">
-            <a href="#mission" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Mission</a>
-            <a href="#concerts" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Concerts</a>
-            <a href="#rehearsals" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Rehearsals</a>
+          <div class="hidden md:flex items-center gap-5" data-desktop-nav>
+            <a href="/" class="text-white transition uppercase text-sm font-medium tracking-wide border-b-2 border-teal-400">Home</a>
+            <a href="/childrens-choir" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Children's Choir</a>
             <a href="/leadership" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Leadership</a>
+            <a href="/past-events" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Past Events</a>
+            <a href="/media" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Media</a>
             <a href="/members" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Members</a>
             <a href="#advertisers" class="text-white/80 hover:text-white transition uppercase text-sm font-medium tracking-wide">Advertisers</a>
-            <button class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full transition uppercase text-sm font-medium tracking-wide">
-              Donate
-            </button>
           </div>
 
           <!-- Mobile menu button -->
-          <button class="md:hidden p-2 text-white">
+          <button class="md:hidden p-2 text-white" type="button" aria-label="Open navigation" aria-expanded="false" data-mobile-menu-button>
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
         </div>
+        <div class="hidden md:hidden pt-4 text-white/90 uppercase text-sm font-medium tracking-wide" data-mobile-menu></div>
       </div>
     </nav>
 
@@ -141,6 +139,36 @@ import content from '../content.json';
       </div>
     </section>
 
+
+    <!-- Children's Choir -->
+    <section id="childrens-choir" class="py-24 bg-[#d4e8d4]/35">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p class="text-sm uppercase tracking-[0.2em] text-teal-700 font-semibold mb-4">Youth Program</p>
+            <h2 class="font-serif text-5xl text-slate-900 mb-6">Charles River Children's Choir</h2>
+            <div class="space-y-4 text-lg text-slate-700 leading-relaxed">
+              <p>The Charles River Children's Choir is starting up for its 11th season! The program is available for grades 2 - 6 and meets at the Clyde F. Brown Elementary School in Millis.</p>
+              <p>Rehearsals are Thursday, 4:30 to 6:00PM and runs for 16 weeks. There are two performances, one with the Charles River Chorale at the winter concert.</p>
+              <p>The cost is $400. Sign up with the Millis Recreational Department 508.376.7050.</p>
+            </div>
+            <a href="/childrens-choir" class="mt-8 inline-block bg-[#1a401b] hover:bg-[#2a5a2b] text-white px-6 py-3 rounded-full transition">
+              Learn About the Children's Choir ->
+            </a>
+          </div>
+
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-white border border-[#2a5a2b]/15 max-w-md justify-self-center w-full">
+            <div class="aspect-square p-6 flex items-center justify-center">
+              <img src="/images/children/crcc-intro.png" alt="Charles River Children's Choir" class="max-w-full max-h-full object-contain" />
+            </div>
+            <div class="bg-[#1a401b] px-8 py-5 text-white">
+              <p class="font-serif text-2xl">Singing together, learning together</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Rehearsal Info -->
     <section id="rehearsals" class="py-24 bg-white">
       <div class="max-w-6xl mx-auto px-6">
@@ -197,10 +225,10 @@ import content from '../content.json';
         <h2 class="font-serif text-5xl text-slate-900 mb-4 text-center">{content.advertisers.title}</h2>
         <p class="text-center text-slate-600 mb-12">{content.advertisers.subtitle}</p>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
           {content.advertisers.logos.map((logo) => (
-            <a href={logo.url} class="bg-white rounded-xl p-8 flex items-center justify-center h-32 shadow-sm hover:shadow-md transition">
-              <span class="font-serif text-2xl text-slate-400">{logo.name}</span>
+            <a href={logo.image} target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-5 flex items-center justify-center min-h-36 shadow-sm hover:shadow-md transition border border-slate-100" aria-label={`View ${logo.name} ad`}>
+              <img src={logo.image} alt={logo.name} class="max-h-24 max-w-full object-contain" loading="lazy" />
             </a>
           ))}
         </div>
@@ -255,6 +283,29 @@ import content from '../content.json';
         </div>
       </div>
     </footer>
+
+    <script>
+      const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+      const mobileMenu = document.querySelector('[data-mobile-menu]');
+      const desktopNav = document.querySelector('[data-desktop-nav]');
+
+      if (mobileMenuButton && mobileMenu && desktopNav) {
+        mobileMenu.innerHTML = desktopNav.innerHTML;
+        mobileMenuButton.addEventListener('click', () => {
+          const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+          mobileMenu.classList.toggle('hidden', isOpen);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.classList.add('block', 'py-3', 'border-t', 'border-white/10');
+          link.addEventListener('click', () => {
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    </script>
 
   </body>
 </html>
